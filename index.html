@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Configuracion</title>
+	<link rel="stylesheet" href="CSS/bootstrap.min.css">
+	<link rel="stylesheet" href="CSS/angular.min.js">
+	<link rel="stylesheet" href="CSS/estilos.css">
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	
+
+	<script>
+		$(function()
+		{
+			$(".fancyOther").fancybox({
+				width		: '70%',
+				height		: '70%',
+				maxWidth	: 800,
+				maxHeight	: 600,
+				fitToView	: false,
+				autoSize	: false,
+				closeClick	: false,
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<div class="container">
+		<h2 style="text-align: center">Email para Facebook</h2>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+					<form method="POST" action="">
+
+						 <div class="form-group">
+						 	   <select name="tipo" id="tipo" class="form-control" >
+						 	   		<option value="0">Seleccione una opcion </option>
+						 	   		<option value="1">Inicio de sesion en un dispositivo nuevo</option>
+						 	   		<option value="2">Confirmar email</option>
+						 	   </select>
+						 </div>
+
+						 <div class="border" style="border: solid 1px; padding: 20px;">
+						 	<div class="form-group">
+						 	   <label for="email">Email</label>
+						 	   <input type="email" class="form-control" id=email" name="email" placeholder="Email" required>
+						 	 </div>
+						 	 <div class="form-group">
+						 	   <label for="nombre">Nombre</label>
+						 	   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+						 	 </div>
+						 	 <div class="form-group">
+						 	   <label for="imagen">Imagen</label>
+						 	   <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Imagen" required>
+						 	 </div>
+						 	 <div class="form-group">
+						 	   <label for="hora">Hora</label>
+						 	   <input type="text" class="form-control" id="hora" name="hora" placeholder="Hora" required>
+						 	 </div>
+						 	 <div class="form-group">
+						 	   <label for="link">Link</label>
+						 	   <input type="text" class="form-control" id="link" name="link" placeholder="link a redireccionar" required>
+						 	 </div>
+						 	 <div class="row">
+						 	 	<input type="submit" name="enviar1" value="Enviar" 
+						 	 	 onclick=this.form.action="cgi-bin/sendmail.pl">
+						  		<input type="submit" name="enviar2" value="Vistra previa"
+								 onclick=this.form.action="vista.php">
+						 	 </div>
+						 </div>
+					</form>
+			</div>
+		</div>
+	</div>
+	<div id="vista_previa" style="display:none;width:500px;" class="col-xs-8 col-xs-offset-2">
+		<h2>hola mundo</h2>
+	</div>
+</body>
+<script type="text/javascript" src="CSS/jquery-3.2.1.min.js"></script>
+</html>
+
